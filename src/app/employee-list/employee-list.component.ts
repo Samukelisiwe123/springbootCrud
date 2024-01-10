@@ -29,4 +29,10 @@ export class EmployeeListComponent implements OnInit{
   updateEmployee(id:number){
     this.Router.navigate(['update-employee',id]);
   }
+
+  deleteEmployees(id: number){
+    this.EmployeeService.deleteEmployee(id).subscribe(data =>{
+      this.getEmployees();
+    })
+  }
 }
